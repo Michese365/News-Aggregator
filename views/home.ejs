@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <%title.forEach((post)=>{%>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img
+            src="<%= post.jetpack_featured_media_url%>"
+            alt="Post photo"
+            width="359px"
+            height="236px"
+          />
+          <div class="card-body">
+            <p class="card-text"><%= post.title.rendered %></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <a href="<%= post.link %> " target="_blank">Read More...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer"); -%>
